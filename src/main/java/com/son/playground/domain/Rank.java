@@ -1,5 +1,7 @@
 package com.son.playground.domain;
 
+import com.son.playground.dto.req.RankReqDto;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -16,13 +18,21 @@ public class Rank {
     @Column(name = "RANK_ID")
     private Long rankId;
     @Column(name = "GAME_ID")
-    private Long gameId;
+    private String gameId;
     @Column(name = "RANKER")
-    private Long ranker;
+    private String ranker;
     @Column(name = "SCORE")
-    private Long score;
+    private int score;
     @Column(name = "USE_YN")
     private String useYn;
     @Column(name = "REG_DT")
     private LocalDateTime regDt;
+
+    @Builder
+    public Rank(RankReqDto req) {
+        this.gameId = req.getGameId();
+        this.ranker = req.getRanker();
+        this.score = req.getScore();
+        this.useYn = "Y";
+    }
 }

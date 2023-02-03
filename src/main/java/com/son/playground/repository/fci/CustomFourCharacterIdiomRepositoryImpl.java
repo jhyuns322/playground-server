@@ -11,9 +11,6 @@ import static com.son.playground.domain.QFourCharacterIdiom.fourCharacterIdiom;
 
 
 public class CustomFourCharacterIdiomRepositoryImpl extends QuerydslRepositorySupport implements CustomFourCharacterIdiomRepository {
-    /**
-     * Creates a new {@link QuerydslRepositorySupport} instance for the given domain type.
-     */
     public CustomFourCharacterIdiomRepositoryImpl() {
         super(FourCharacterIdiom.class);
     }
