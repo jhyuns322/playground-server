@@ -1,6 +1,7 @@
 package com.son.playground.domain;
 
 import lombok.Getter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ public class Game {
     private String gameNm;
     @Column(name = "USE_YN")
     private String useYn;
+    @CreationTimestamp
     @Column(name = "REG_DT")
     private LocalDateTime regDt;
 }

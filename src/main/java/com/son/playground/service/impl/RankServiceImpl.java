@@ -23,8 +23,8 @@ public class RankServiceImpl implements RankService {
 
     @Override
     public void addRank(RankReqDto req) throws Exception {
-        if (rankRepository.existsById(req.getRankId())) {
-            throw new Exception("RankID already exists");
+        if (rankRepository.existsByGameIdAndRanker(req.getGameId(), req.getRanker())) {
+            throw new Exception("Ranker already exists");
         }
         rankRepository.save(Rank.builder().req(req).build());
     }

@@ -7,7 +7,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class FourCharacterIdiomResDto extends BaseResDto {
-    private String fciAnswer;
-    private String fciSubAnswer;
+    private String fciAnswerKo;
+    private String fciAnswerCn;
+    private String fciSubAnswers;
     private String fciQuestion;
 }

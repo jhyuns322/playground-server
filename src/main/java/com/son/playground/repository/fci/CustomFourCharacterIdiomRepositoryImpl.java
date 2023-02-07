@@ -21,9 +21,11 @@ public class CustomFourCharacterIdiomRepositoryImpl extends QuerydslRepositorySu
                 .select(
                         Projections.bean(
                                 FourCharacterIdiomResDto.class,
-                                fourCharacterIdiom.fciAnswer,
-                                fourCharacterIdiom.fciSubAnswer,
+                                fourCharacterIdiom.fciAnswerKo,
+                                fourCharacterIdiom.fciAnswerCn,
+                                fourCharacterIdiom.fciSubAnswers,
                                 fourCharacterIdiom.fciQuestion,
+                                fourCharacterIdiom.fciLevel,
                                 fourCharacterIdiom.useYn,
                                 fourCharacterIdiom.regDt
                         )

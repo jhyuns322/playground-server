@@ -4,6 +4,7 @@ import com.son.playground.dto.req.RankReqDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -25,6 +26,7 @@ public class Rank {
     private int score;
     @Column(name = "USE_YN")
     private String useYn;
+    @CreationTimestamp
     @Column(name = "REG_DT")
     private LocalDateTime regDt;
 
@@ -33,6 +35,6 @@ public class Rank {
         this.gameId = req.getGameId();
         this.ranker = req.getRanker();
         this.score = req.getScore();
-        this.useYn = "Y";
+        this.useYn = req.getUseYn() != null ? req.getUseYn() : "Y";
     }
 }

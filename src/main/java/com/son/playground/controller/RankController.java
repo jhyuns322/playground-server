@@ -18,11 +18,13 @@ public class RankController {
 
     @GetMapping("/")
     public ResponseEntity<?> getRanks(@RequestBody RankReqDto req) {
+        log.info("addRank req - {}", req.toString());
         return new ResponseEntity<>(rankService.getRanks(req), HttpStatus.OK);
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> addRank(RankReqDto req) {
+    public ResponseEntity<?> addRank(@RequestBody RankReqDto req) {
+        log.info("addRank req - {}", req.toString());
         try{
             rankService.addRank(req);
         } catch (Exception e) {
@@ -30,4 +32,5 @@ public class RankController {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }
